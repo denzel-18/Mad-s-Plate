@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #131313;
+    text-align: right;
+    
+  }
+
+  .container {
+    padding: 10px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+
+  .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 20%;
+    text-align: left;
+    left: 200px;
+    bottom: -100px;
+}
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #faf4f4;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+    text-align: right;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+    text-align: left;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+    text-align: right;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #ff0000, #ffabab);
+    border-image-slice: 1;
+    text-align: left;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #ff0000;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+    text-align: left;
+}
+
+button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: auto;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f77062;
+    color: #fff;
+    bottom: -125px;
+    left: 200px;
+}
+
+button:hover {
+    background: #ff0000;
+    transition: all 0.3s ease;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f77062;
+  bottom: 200px;
+  bottom: -125px;
+  left: 200px;
+
+}
+
+.imgcontainer {
+  margin: 24px 0 12px 0;
+  min-height: 100%;
+  max-width: 800px;
+
+}
+
+img.avatar {
+  width: 45%;
+  border-radius: 50%;
+  background-position: left;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20px;
+}
+
+.container {
+  padding: 16px;
+  color: #fff;
+  width: 100%;
+}
+
+.container b {
+    position: absolute;
+    
+    left: 30px;
+    padding-right: 30px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
