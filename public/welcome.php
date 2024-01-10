@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,335 +15,127 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- Custom Styles -->
-
     <style>
-        * 
-
-        /* Main Content CSS */
-        .main {
-            background-color: #141414;
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Set the background color to black */
         }
-
-        .main__container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            justify-self: center;
-            margin: 0 auto;
-            height: 90vh;
-            background-color: #131313;
-            z-index: 1;
-            width: 100%;
-            max-width: 1300px;
-            padding-right: 50px;
-            padding-left: 50px;
-        }
-
-        .main__content {
-            color: #fff;
-            width: 100%;
-        }
-
-        .main__content h1 {
-            font-size: 4rem;
-            background-color: #ff8177;
-            background-image: linear-gradient(to top, #f80000 0%, #ffffff 100%);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-        }
-
-        .main__content h2 {
-            font-size: 4rem;
-            margin-top: 10px;
-            background-color: #ff8177;
-            background-image: linear-gradient(20deg, #f80000 0%, #ffffff 100%);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-        }
-
-        .main__content p {
-            margin-top: 1rem;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .main__img--container {
-            text-align: right;
-            
-        }
-
-        #main__img {
-            height: 90%;
-            width: 90%;
-            margin-left: 690px;
-            margin-top: 50px;
-        }
-
-        /* Share Your Thoughts Container CSS */
-.share-thoughts-container {
-position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(to top, #f80000 0%, #ffffff 100%);
-  padding: 50px;
-  border-radius: 15px; 
-}
-
-.share-thoughts-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 30px;
-  font-family: 'Roboto', sans-serif;
-}
-
-#thoughts-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  font-size: 1.2rem;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-}
-
-textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.btn-primary {
-  background-color: #ff8177;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #000; /* Change to black on hover */
-}
 
         /* Footer CSS */
         .footer__container {
-            background-color: #141414;
-            padding: 5rem 0;
-            display: flex;
-            flex-direction: column;
+            background: url('images/8.png') no-repeat center center fixed; /* Set the image as the background */
+            background-size: cover; /* Ensure the image covers the whole container */
+            height: 100vh; /* Set the height to cover the entire screen */
+            display: cover;
+            align-items: center;
             justify-content: center;
-            align-items: center;
+            text-align: center;
         }
 
-        #footer__logo {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 2rem;
+        .footer__logow img {
+            width: 100%; /* Adjust the width as needed */
+            height: auto; /* Maintain the aspect ratio */
+            max-width: 200px; /* Set a maximum width if needed */
+            display: block; /* Remove any extra spacing */
+            margin: 0 auto; /* Center the image within its container */
+            transform: scaleX(-1); /* Flip the image horizontally */
+        }
+        .buttoncst:hover {
+            background-color: red;
+            color: white;
+        }
+        .buttoncst{
+            
+            border-radius: 2em;
+            background: linear-gradient(111.4deg, rgb(246, 4, 26) 0.4%, rgb(251, 139, 34) 100.2%);
+            margin-top: 3em;
+            font-family: Anton;
+            color: #453321;
+            float: center;
+            width: 350px;
+            height: 80px;
+            font-size: 35px;
+            font-weight: bold; 
+            color: black; 
         }
 
-        .footer__image {
-            width: 200px;
-            height: 50%;
+        .main__img {
+    width: 35em; /* Adjust the width of the image */
+    height: 35em; /* Maintain the aspect ratio */
+    background: none; /* Remove the background */
+    margin-left: -30px; /* Move it to the left */
+    margin-top: 5em; 
+    position: absolute;
         }
-
-        /* Social Icons */
-        .social__icon--link {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
+        .right{
+    float: right;
+    background-color: transparent;
+    height: 20em;
+    width: 40em;
+    margin-top: 13em;
+    margin-right: 10em;
         }
+    </style>
 
-        .social__icons--span {
-            font-size: 18px;
-            color: #ffffff;
-        }
-
-        .social__media {
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .social__media--wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            max-width: 1000px;
-            margin: 40px auto 0 auto;
-        }
-
-        .social__icons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 240px;
-        }
-
-        .social__icon--link {
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
-}
-
-.social__icons--span {
-  font-size: 18px;
-  color: #ffffff;
-}
-.social__media {
-  max-width: 1000px;
-  width: 100%;
-}
-
-.social__media--wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto 0 auto;
-}
-
-.social__icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-  
-}
-
-.social__logo {
-  color: #fff;
-  justify-self: start;
-  margin-left: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.website__rights {
-  color: #fff;
-}
-
-@media screen and (max-width: 820px) {
-  .footer__links {
-    padding-top: 2rem;
-  }
-
-  #footer__logo {
-    margin-bottom: 2rem;
-  }
-
-  .website__rights {
-    margin-bottom: 2rem;
-  }
-
-  .footer__link--wrapper {
-    flex-direction: column;
-  }
-
-  .social__media--wrap {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .footer__link--items {
-    margin: 0;
-    padding: 10px;
-    width: 100%;
-  }
-}
-</style>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
-<body>
-    
 
-<!-- Hero Section -->
-    <div class="main" id="top">
-        <div class="container">
-                <div class="col-lg-6">
-                    <div class="main__img--container">
-                        <img id="main__img" src="images/1.png" title="Mad Plate's Logo" alt="Logo" />
-                    </div>
+<body>
+    <!-- Your existing HTML content goes here -->
+    
+    <!-- <div class="button-container">
+    <p style="margin: 0;  font-size: 20px; color: white ; font-family: Ancient Kai; text-align: right;">You are ?</p>
+    <div class="text-end">
+            <div class="rectangular-button stair-style" onclick="scrollPage('up')">Customer</div>
+            <p style="color: white ; font-size: 20px; font-family: Ancient Kai; text-align: right;">or</p>
+            <div class="rectangular-button stair-style" onclick="scrollPage('down')">Admin</div>
+        </div>
+    </div>
+</div> -->
+
+
+     <!-- Image on the left -->
+     <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="main__img--container">
+                    <img class="main__img" src="images/1.png" title="Mad Plate's Logo" alt="Logo" />
                 </div>
             </div>
         </div>
     </div>
 
-     <!-- Share Your Thoughts Section -->
-     <div class="share-thoughts-container">
-    <div class="container">
-        <h2 class="share-thoughts-title">Tell us what's on your mind</h2>
-        <form onsubmit="sendEmail(); reset(); return false">
-            <div class="form-group">
-                <textarea class="form-control" id="email" placeholder="Insert Gmail Account:" n rows="1" required></textarea>
-                <br>
-                <textarea class="form-control" id="opinion" placeholder="Share Your Thoughts:" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn-primary">Submit</button>
+    <div class="right">
+    <p style=" font-size: 25px; color: white ; font-family: Ancient Kai; text-align: center;">You are ?</p>
+    <div class="text-center">
+     <form method="post" action="">
+     <button type="submit" onclick="location.href='http://localhost/Github/Mad-s-Plate/public/index.html'" name="login" class="btn buttoncst" style="margin-top: 0em;">Customer</button>
+        
+    </form>
+        <p style="margin-top: 10px; margin-bottom: 40px; font-size: 25px; color: white ; font-family: Ancient Kai; text-align: center;">or</p>
+        <form method="post" action="">
+        <button type="submit" name="signup" class="btn buttoncst" style="margin-top: -1em;">Admin</button>
         </form>
     </div>
 </div>
-
-
+    </div>
     <!-- Footer Section -->
     <div class="footer__container" id="bottom">
         <section class="social__media">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="footer__logo">
-                            <a href="/" id="footer__logo"><img src="images/2.png" class="footer__image"
-                                    title="Title" alt="Logo"></a>
-                        </div>
-                        <p class="website__rights">© Mad Plate's Sizzling House 2023. All rights reserved</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="social__icons">
-                            <a class="social__icon--link"
-                                href="https://www.facebook.com/profile.php?id=100090826535166&mibextid=ZbWKwL"
-                                target="_blank" aria-label="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a class="social__icon--link" href="/" target="blank" aria-label="Contact">
-                                <i class="fa-solid fa-phone"></i>
-                            </a>
-                           
+                        <div class="footer__logow">
+                            <a href="/" id="footer__logow"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
-    <!-- Bootstrap JS and Popper.js -->
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
 </body>
 
 </html>
