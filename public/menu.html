@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mad Plate's Food Menu</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+      background-color: #131313; 
+      color: #fff; 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .menu__container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #131313; 
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .menu-section {
+      margin-bottom: 30px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .menu-item {
+      background-color: #f77062; 
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .menu-item-content {
+      padding: 10px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #f77062; 
+    }
+
+    h2 {
+      color: #fff; 
+      margin-bottom: 10px;
+    }
+
+    .navbar {
+      background-color: #131313; 
+      padding: 15px;
+      text-align: center;
+    }
+
+    .navbar__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar__logo {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .navbar__menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar__item {
+      margin: 0;
+    }
+
+    .navbar__links {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+
+    .navbar__links:hover {
+      color: #f77062; 
+    }
+
+    .navbar__logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    max-width: 150px; 
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #fff; 
+      border-radius: 5px; 
+    }
+
+    .no-results {
+      color: #ff0000;
+      font-style: italic;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo"><img src="images/2.png" class="navbar__image" title="Title"></a>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="index.html#top" class="navbar__links">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#middle" class="navbar__links">About Us</a>
+        </li>
+        <li class="navbar__item">
+          <a href="index.html#bottom" class="navbar__links">Contact Us</a>
+        </li>
+        <li class="navbar__item">
+          <a href= "message.php" class="navbar__links">Message Us</a>
+        </li>
+        <li class="navbar__item">
+          <a href="Log.html" class="navbar__links">Log in</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="menu__container">
+    <h1>Mad Plate's Food Menu</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search for a dish..." oninput="searchMenu()">
+    </div>
+
+    <!-- No results message -->
+    <div class="no-results" id="noResultsMessage" style="display: none;">No results found.</div>
+
+    <!-- Sizzling Dishes -->
+    <div class="menu-section">
+      <h2>Sizzling Dishes</h2>
+      <div class="menu-grid">
+        <!-- Sizzling Beef Steak -->
+        <div class="menu-item">
+          <img src="images/sizzling_beef_steak.jpg" alt="Sizzling Beef Steak">
+          <div class="menu-item-content">
+            <h2>Sizzling Beef Steak</h2>
+          </div>
+        </div>
+
+        <!-- Sizzling Chicken Sisig -->
+        <div class="menu-item">
+          <img src="images/sizzling_chicken_sisig.jpg" alt="Sizzling Chicken Sisig">
+          <div class="menu-item-content">
+            <h2>Sizzling Chicken Sisig</h2>
+          </div>
+        </div>
+
+        <!-- Sizzling Pork Belly -->
+        <div class="menu-item">
+          <img src="images/sizzling_pork_belly.jpg" alt="Sizzling Pork Belly">
+          <div class="menu-item-content">
+            <h2>Sizzling Pork Belly</h2>
+          </div>
+        </div>
+
+        <!-- Sizzling Seafood Mix -->
+        <div class="menu-item">
+          <img src="images/sizzling_seafood_mix.jpg" alt="Sizzling Seafood Mix">
+          <div class="menu-item-content">
+            <h2>Sizzling Seafood Mix</h2>
+          </div>
+        </div>
+
+        <!-- Sizzling Tofu -->
+        <div class="menu-item">
+          <img src="images/sizzling_tofu.jpg" alt="Sizzling Tofu">
+          <div class="menu-item-content">
+            <h2>Sizzling Tofu</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Silog Meals -->
+        <div class="menu-section">
+          <h2>Silog Meals</h2>
+          <div class="menu-grid">
+            <!-- Tapsilog (Marinated Beef with Garlic Rice and Fried Egg) -->
+            <div class="menu-item">
+              <img src="images/tapsilog.jpg" alt="Tapsilog">
+              <div class="menu-item-content">
+                <h2>Tapsilog (Marinated Beef with Garlic Rice and Fried Egg)</h2>
+              </div>
+            </div>
+
+            <!-- Tosilog (Sweet Pork Tocino with Garlic Rice and Fried Egg) -->
+            <div class="menu-item">
+              <img src="images/tosilog.jpg" alt="Tosilog">
+              <div class="menu-item-content">
+                <h2>Tosilog (Sweet Pork Tocino with Garlic Rice and Fried Egg)</h2>
+              </div>
+            </div>
+
+            <!-- Bangsilog (Fried Bangus with Garlic Rice and Fried Egg) -->
+            <div class="menu-item">
+              <img src="images/bangsilog.jpg" alt="Bangsilog">
+              <div class="menu-item-content">
+                <h2>Bangsilog (Fried Bangus with Garlic Rice and Fried Egg)</h2>
+              </div>
+            </div>
+
+            <!-- Longsilog (Sweet Sausage with Garlic Rice and Fried Egg) -->
+            <div class="menu-item">
+              <img src="images/longsilog.jpg" alt="Longsilog">
+              <div class="menu-item-content">
+                <h2>Longsilog (Sweet Sausage with Garlic Rice and Fried Egg)</h2>
+              </div>
+            </div>
+
+            <!-- Hotsilog (Hotdog with Garlic Rice and Fried Egg) -->
+            <div class="menu-item">
+              <img src="images/hotsilog.jpg" alt="Hotsilog">
+              <div class="menu-item-content">
+                <h2>Hotsilog (Hotdog with Garlic Rice and Fried Egg)</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- Flavoured Chicken -->
+          <div class="menu-section">
+            <h2>Flavoured Chicken</h2>
+            <div class="menu-grid">
+              <!-- Spicy Buffalo Chicken Wings -->
+              <div class="menu-item">
+                <img src="images/spicy_buffalo_chicken_wings.jpg" alt="Spicy Buffalo Chicken Wings">
+                <div class="menu-item-content">
+                  <h2>Spicy Buffalo Chicken Wings</h2>
+                </div>
+              </div>
+
+              <!-- Honey Glazed Chicken Drumsticks -->
+              <div class="menu-item">
+                <img src="images/honey_glazed_chicken_drumsticks.jpg" alt="Honey Glazed Chicken Drumsticks">
+                <div class="menu-item-content">
+                  <h2>Honey Glazed Chicken Drumsticks</h2>
+                </div>
+              </div>
+
+              <!-- Garlic Parmesan Chicken Tenders -->
+              <div class="menu-item">
+                <img src="images/garlic_parmesan_chicken_tenders.jpg" alt="Garlic Parmesan Chicken Tenders">
+                <div class="menu-item-content">
+                  <h2>Garlic Parmesan Chicken Tenders</h2>
+                </div>
+              </div>
+
+              <!-- Teriyaki Chicken Skewers -->
+              <div class="menu-item">
+                <img src="images/teriyaki_chicken_skewers.jpg" alt="Teriyaki Chicken Skewers">
+                <div class="menu-item-content">
+                  <h2>Teriyaki Chicken Skewers</h2>
+                </div>
+              </div>
+
+              <!-- BBQ Chicken Wings -->
+              <div class="menu-item">
+                <img src="images/bbq_chicken_wings.jpg" alt="BBQ Chicken Wings">
+                <div class="menu-item-content">
+                  <h2>BBQ Chicken Wings</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Dishes -->
+          <div class="menu-section">
+            <h2>Side Dishes</h2>
+            <div class="menu-grid">
+              <!-- French Fries -->
+              <div class="menu-item">
+                <img src="images/french_fries.jpg" alt="French Fries">
+                <div class="menu-item-content">
+                  <h2>French Fries</h2>
+                </div>
+              </div>
+
+              <!-- Onion Rings -->
+              <div class="menu-item">
+                <img src="images/onion_rings.jpg" alt="Onion Rings">
+                <div class="menu-item-content">
+                  <h2>Onion Rings</h2>
+                </div>
+              </div>
+
+              <!-- Mozzarella Sticks -->
+              <div class="menu-item">
+                <img src="images/mozzarella_sticks.jpg" alt="Mozzarella Sticks">
+                <div class="menu-item-content">
+                  <h2>Mozzarella Sticks</h2>
+                </div>
+              </div>
+
+              <!-- Garlic Bread -->
+              <div class="menu-item">
+                <img src="images/garlic_bread.jpg" alt="Garlic Bread">
+                <div class="menu-item-content">
+                  <h2>Garlic Bread</h2>
+                </div>
+              </div>
+
+              <!-- Coleslaw -->
+              <div class="menu-item">
+                <img src="images/coleslaw.jpg" alt="Coleslaw">
+                <div class="menu-item-content">
+                  <h2>Coleslaw</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beverages -->
+          <div class="menu-section">
+            <h2>Beverages</h2>
+            <div class="menu-grid">
+              <!-- Fresh Fruit Shakes (Mango, Strawberry, Banana, etc.) -->
+              <div class="menu-item">
+                <img src="images/fresh_fruit_shakes.jpg" alt="Fresh Fruit Shakes">
+                <div class="menu-item-content">
+                  <h2>Fresh Fruit Shakes (Mango, Strawberry, Banana, etc.)</h2>
+                </div>
+              </div>
+
+              <!-- Iced Tea -->
+              <div class="menu-item">
+                <img src="images/iced_tea.jpg" alt="Iced Tea">
+                <div class="menu-item-content">
+                  <h2>Iced Tea</h2>
+                </div>
+              </div>
+
+              <!-- Lemonade -->
+              <div class="menu-item">
+                <img src="images/lemonade.jpg" alt="Lemonade">
+                <div class="menu-item-content">
+                  <h2>Lemonade</h2>
+                </div>
+              </div>
+
+              <!-- Soft Drinks -->
+              <div class="menu-item">
+                <img src="images/soft_drinks.jpg" alt="Soft Drinks">
+                <div class="menu-item-content">
+                  <h2>Soft Drinks</h2>
+                </div>
+              </div>
+
+              <!-- Coffee -->
+              <div class="menu-item">
+                <img src="images/coffee.jpg" alt="Coffee">
+                <div class="menu-item-content">
+                  <h2>Coffee</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <script>
+      // Function to search through the menu items
+      function searchMenu() {
+      var input, filter, menuSections, items, title, i, j, resultsMessage;
+      input = document.getElementById("searchInput");
+      filter = input.value.toUpperCase();
+      menuSections = document.querySelectorAll(".menu-section");
+      resultsMessage = document.getElementById("noResultsMessage");
+      let foundResults = false;
+
+      for (j = 0; j < menuSections.length; j++) {
+        items = menuSections[j].getElementsByClassName("menu-item");
+
+        for (i = 0; i < items.length; i++) {
+          title = items[i].getElementsByTagName("h2")[0];
+          if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "";
+            foundResults = true;
+          } else {
+            items[i].style.display = "none";
+          }
+        }
+      }
+
+      if (foundResults) {
+        resultsMessage.style.display = "none";
+      } else {
+        resultsMessage.style.display = "block";
+      }
+    }
+  </script>
+</body>
+
+</html>
