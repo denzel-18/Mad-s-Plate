@@ -299,11 +299,14 @@ textarea {
      <div class="share-thoughts-container">
     <div class="container">
         <h2 class="share-thoughts-title">Tell us what's on your mind</h2>
-        <form onsubmit="sendEmail(); reset(); return false">
+        <form action="process_message.php" method="post">
             <div class="form-group">
-                <textarea class="form-control" id="email" placeholder="Insert Gmail Account:" n rows="1" required></textarea>
-                <br>
-                <textarea class="form-control" id="opinion" placeholder="Share Your Thoughts:" rows="3" required></textarea>
+              <label for="email">Insert Gmail Account:</label>
+              <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="opinion">Share Your Thoughts:</label>
+              <textarea class="form-control" id="opinion" name="opinion" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn-primary">Submit</button>
         </form>
@@ -344,7 +347,6 @@ textarea {
     <!-- Bootstrap JS and Popper.js -->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
 

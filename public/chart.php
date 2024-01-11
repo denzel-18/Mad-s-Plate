@@ -179,6 +179,18 @@
               <div>Analytics</div>
             </a>
           </li>
+          <li>
+            <a href="inbox.php">
+              <i class="fas fa-inbox"></i>
+              <div>Inbox</div>
+            </a>
+          </li>
+          <li>
+            <a href="book_assigned.php">
+              <i class="fas fa-book"></i>
+              <div>Book Assigned</div>
+            </a>
+          </li>
           <!--
           <li>
             <a href="AddData.html">
