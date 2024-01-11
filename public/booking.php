@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         echo "<script>
                 alert('Your reservation is successfully');
-                window.location.href = 'booking.php';
+                window.location.href = 'index.html';
               </script>";
     } else {
         echo "Error: " . $stmt->error;

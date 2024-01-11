@@ -109,15 +109,15 @@
     </div>
 
     <div class="right">
-    <p style=" font-size: 25px; color: white ; font-family: Ancient Kai; text-align: center;">You are ?</p>
+    <p style=" font-size: 25px; color: white ; font-family: Ancient Kai; text-align: center;">Are you ?</p>
     <div class="text-center">
-     <form method="post" action="">
-     <button type="submit" onclick="location.href='http://localhost/Github/Mad-s-Plate/public/index.html'" name="login" class="btn buttoncst" style="margin-top: 0em;">Customer</button>
+     <form method="post" action="customer.php">
+     <button type="submit" name="login" class="btn buttoncst" style="margin-top: 0em;">Customer</button>
         
     </form>
         <p style="margin-top: 10px; margin-bottom: 40px; font-size: 25px; color: white ; font-family: Ancient Kai; text-align: center;">or</p>
-        <form method="post" action="">
-        <button type="submit" name="signup" class="btn buttoncst" style="margin-top: -1em;">Admin</button>
+        <form method="post" action="index.html">
+        <button type="submit" class="btn buttoncst" style="margin-top: -1em;">Admin</button>
         </form>
     </div>
 </div>
