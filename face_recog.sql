@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2024 at 04:45 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Jan 11, 2024 at 05:46 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `booking1`
+--
+
+CREATE TABLE `booking1` (
+  `id` int(11) NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `last` varchar(55) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `table` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking1`
+--
+
+INSERT INTO `booking1` (`id`, `name`, `last`, `date`, `time`, `table`) VALUES
+(1, 'Onin', 'Sumabat', '2024-01-12', '00:43:00', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `data_analysis`
 --
 
@@ -37,7 +58,7 @@ CREATE TABLE `data_analysis` (
   `happy` varchar(500) DEFAULT NULL,
   `very_happy` varchar(500) DEFAULT NULL,
   `total` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `data_analysis`
@@ -63,8 +84,8 @@ CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `opinion` text NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `messages`
@@ -77,6 +98,12 @@ INSERT INTO `messages` (`id`, `email`, `opinion`, `timestamp`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `booking1`
+--
+ALTER TABLE `booking1`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `data_analysis`
@@ -93,6 +120,12 @@ ALTER TABLE `messages`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booking1`
+--
+ALTER TABLE `booking1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `data_analysis`
