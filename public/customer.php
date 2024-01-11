@@ -14,7 +14,7 @@
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="index.html" id="navbar__logo"><img src="images/2.png" class="navbar__image" title="Title"></a>
+      <a href="customer.php" id="navbar__logo"><img src="images/2.png" class="navbar__image" title="Title">
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>
@@ -24,12 +24,6 @@
             <a href="#top" class="navbar__links">Home</a>
           </li>
           <li class="navbar__item">
-            <a href="menu.html" class="navbar__links" id="menu-toggle">Menu</a>
-          </li>
-          <li class="navbar__item">
-            <a href="booking.php" class="navbar__links" id="menu-toggle">Book</a>
-          </li>
-          <li class="navbar__item">
             <a href="#middle" class="navbar__links">About Us</a>
           </li>
           <li class="navbar__item">
@@ -37,6 +31,12 @@
           </li>
           <li class="navbar__item">
             <a href= "message.php" class="navbar__links">Message Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="menu.html" class="navbar__links" id="menu-toggle">Menu</a>
+          </li>
+          <li class="navbar__item">
+            <a href="booking.php" class="navbar__links" id="menu-toggle">Book</a>
           </li>
         </ul>
       </div>
@@ -82,7 +82,7 @@
       <section class="social__media">
         <div class="social__media--wrap">
           <div class="footer__logo">
-            <a href="/" id="footer__logo"><img src="images/2.png" class="footer__image" title="Title"></a>
+            <a href="customer.php" id="footer__logo"><img src="images/2.png" class="footer__image" title="Title"></a>
           </div>
           <p class="website__rights">© Mad Plate's Sizzling House 2023. All rights reserved</p>
           <div class="social__icons">

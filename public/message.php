@@ -81,67 +81,68 @@
         }
 
         #main__img {
-            height: 90%;
-            width: 90%;
+            height: 110%;
+            width: 110%;
             margin-left: 690px;
             margin-top: 50px;
         }
 
         
         .share-thoughts-container {
-        position: absolute;
-          top: 40%;
-          left: 35%;
-          transform: translate(-50%, -50%);
-          background: linear-gradient(to top, #f80000 0%, #ffffff 100%);
-          padding: 50px;
-          border-radius: 15px; 
+            position: absolute;
+            top: 40%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+            padding: 50px;
+            border-radius: 15px; 
         }
 
         .share-thoughts-title {
-          text-align: center;
-          font-size: 2.5rem;
-          color: #333;
-          margin-bottom: 30px;
-          font-family: 'Roboto', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-family: 'Roboto', sans-serif;
         }
 
         #thoughts-form {
-          max-width: 600px;
-          margin: 0 auto;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .form-group {
-          margin-bottom: 20px;
+            margin-bottom: 20px;
         }
 
         label {
-          font-size: 1.2rem;
-          color: #333;
-          font-family: 'Roboto', sans-serif;
+            font-size: 1.2rem;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
         }
 
         textarea {
-          width: 100%;
-          padding: 10px;
-          font-size: 1rem;
-          border: 1px solid #ddd;
-          border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
         .btn-primary {
-          background-color: #ff8177;
-          color: #fff;
-          font-size: 1.2rem;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
+            background-color: black;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
-          background-color: #000; /* Change to black on hover */
+            background-color: white; /* Change to black on hover */
+            color: black;
         }
 
         /* Footer CSS */
@@ -152,13 +153,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: cover;
         }
 
         #footer__logo {
             color: #fff;
             display: flex;
             align-items: center;
-            cursor: pointer;
             text-decoration: none;
             font-size: 2rem;
         }
@@ -166,6 +167,7 @@
         .footer__image {
             width: 200px;
             height: 50%;
+            margin-top: 0px;
         }
 
         /* Social Icons */
@@ -298,22 +300,19 @@
      <!-- Share Your Thoughts Section -->
      <div class="share-thoughts-container">
     <div class="container">
-        <h2 class="share-thoughts-title">Tell us what's on your mind</h2>
+    <h2 class="share-thoughts-title"><strong>Tell us what's on your mind</strong></h2>
         <form action="process_message.php" method="post">
             <div class="form-group">
-              <label for="email">Insert Gmail Account:</label>
-              <input type="text" class="form-control" id="email" name="email" required>
+              <input type="text" class="form-control" placeholder="Insert Gmail:" id="email" name="email" required>
             </div>
             <div class="form-group">
-              <label for="opinion">Share Your Thoughts:</label>
-              <textarea class="form-control" id="opinion" name="opinion" rows="3" required></textarea>
+              <textarea class="form-control" placeholder="Inquiries:" id="opinion" name="opinion" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn-primary">Submit</button>
         </form>
     </div>
 </div>
-
-
+         
     <!-- Footer Section -->
     <div class="footer__container" id="bottom">
         <section class="social__media">
@@ -321,11 +320,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="footer__logo">
-                            <a href="/" id="footer__logo"><img src="images/2.png" class="footer__image"
+                            <a href="customer.php" id="footer__logo"><img src="images/2.png" class="footer__image"
                                     title="Title" alt="Logo"></a>
                         </div>
                         <p class="website__rights">© Mad Plate's Sizzling House 2023. All rights reserved</p>
                     </div>
+                    <br>
+                    <br>
+                    <br>
                     <div class="col-md-6">
                         <div class="social__icons">
                             <a class="social__icon--link"
