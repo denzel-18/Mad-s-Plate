@@ -5,6 +5,15 @@ if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Function to handle the "Done" action
+function markReservationAsDone($id) {
+    global $db;
+    $stmt = mysqli_prepare($db, "UPDATE booking1 SET status = 'Done' WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+
 if (isset($_POST['delete'])) {
     $idToDelete = $_POST['reserve_id'];
 
@@ -24,8 +33,15 @@ if (isset($_POST['delete'])) {
     }
 
     mysqli_stmt_close($stmt);
-}
+} elseif (isset($_POST['done'])) {
+    $idToMarkAsDone = $_POST['reserve_id'];
+    markReservationAsDone($idToMarkAsDone);
 
+    echo "<script>
+            alert('Reservation marked as Done');
+            window.location.href = 'book_assigned.php';
+          </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +85,7 @@ if (isset($_POST['delete'])) {
             <th> Reservation Date </th>
             <th> Time </th>
             <th> Number of Person </th>
-            <th colspan='2'>Action</th>
+            <th colspan='3'>Action</th>
         </tr>
 
         <?php 
@@ -84,6 +100,13 @@ if (isset($_POST['delete'])) {
             echo "<td>". $value['date']. "</td>";
             echo "<td>". date("h:i A", strtotime($value['time'])). "</td>"; // Format time to AM/PM
             echo "<td>". $value['table']. "</td>";
+
+            echo "<td>
+                    <form method='POST' onsubmit='return confirm(\"Have you completed this reservation?\");'>
+                        <input type='hidden' name='reserve_id' value='". $value['id']. "'>
+                        <button type='submit' name='done' class='btn btn-success'>DONE</button>
+                    </form>
+                  </td>";
             
             echo "<td>
                     <form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this record?\");'>
@@ -91,7 +114,7 @@ if (isset($_POST['delete'])) {
                         <button type='submit' name='delete' class='btn btn-danger'>DELETE</button>
                     </form>
                   </td>";
-                  
+
             echo "</tr>";
             $no++; // increment for the next iteration
         }

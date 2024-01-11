@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2024 at 05:46 PM
+-- Generation Time: Jan 11, 2024 at 07:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,19 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking1` (
   `id` int(11) NOT NULL,
-  `name` varchar(55) NOT NULL,
-  `last` varchar(55) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `last` varchar(60) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `table` varchar(55) NOT NULL
+  `table` varchar(60) NOT NULL,
+  `status` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking1`
 --
 
-INSERT INTO `booking1` (`id`, `name`, `last`, `date`, `time`, `table`) VALUES
-(1, 'Onin', 'Sumabat', '2024-01-12', '00:43:00', '1');
+INSERT INTO `booking1` (`id`, `name`, `last`, `date`, `time`, `table`, `status`) VALUES
+(1, 'Onin', 'Sumabat', '2023-12-08', '02:43:00', '1', 'Done');
 
 -- --------------------------------------------------------
 
