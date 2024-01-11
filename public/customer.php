@@ -1,326 +1,106 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mad Plate's Sizzling House</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha384-kmTzntF2ZzRO2WQUVfNRVgpK73aL/kW3ozzyB8b6TcFTlB0bF/B1y7JCAC9a8hUJ" crossorigin="anonymous">
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://kit.fontawesome.com/310feacd4a.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Custom Styles -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" id="navbar__logo"><img src="images/2.png" class="navbar__image" title="Title"></a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="#top" class="navbar__links">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="menu.html" class="navbar__links" id="menu-toggle">Menu</a>
+          </li>
+          <li class="navbar__item">
+            <a href="booking.php" class="navbar__links" id="menu-toggle">Book</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#middle" class="navbar__links">About Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#bottom" class="navbar__links">Contact Us</a>
+          </li>
+          <li class="navbar__item">
+            <a href= "message.php" class="navbar__links">Message Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <style>
-        * 
+    <!-- Hero Section -->
+    <div class="main" id="top">
+      <div class="main__container">
+        <div class="main__content">
+          <h1>MAD PLATE'S</h1>
+          <h2>SIZZLING HOUSE</h2>
+          <p>Want some sizzle? Its <span style="color:red">MAD</span> tasty!</p>
+        </div>
+        <div class="main__img--container">
+          <img id="main__img" src="images/1.png" title="Mad Plate's Logo" />
+        </div>
+      </div>
+    </div>
 
-        /* Main Content CSS */
-        .main {
-            background-color: #141414;
-        }
+    <!-- Services Section -->
+    <div class="services" id="middle">
+      <h1>See what the hype is about</h1>
+      <div class="services__container">
+        <div class="services__card">
+          <h2>About Us</h2>
+          <img src="images/4.jpg" width="400" height="595">
+          <p>Mad Plate Sizzling House is a family-owned sizzling restaurant by Cabe Family located at Sta. Ana, Manila. Established on March 10, 2023, it is a newly started business and they provide a wide range of meals, including Sizzling dishes, Silog meals, and Flavoured chicken.</p>
+        </div>
+        <div class="services__card">
+          <h2>Location</h2>
+          <img src="images/5.png" width="400" height="595">
+          <p>We are located at 2510 Garrido cor. Tejeron St., Brgy. 874, Sta. Ana, Manila</p>
+          <a href="https://www.google.com/maps/place/2510+Garrido,+San+Andres+Bukid,+Manila,+Metro+Manila/@14.576895,121.012101,16z/data=!4m5!3m4!1s0x3397c9bd6c7592d1:0x3e18594ea7c15c83!8m2!3d14.5768945!4d121.012101?hl=en" target="_blank" aria-label="Locate"><button>Locate</button></a>
+        </div>
+      </div>
+    </div>
 
-        .main__container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            justify-self: center;
-            margin: 0 auto;
-            height: 90vh;
-            background-color: #131313;
-            z-index: 1;
-            width: 100%;
-            max-width: 1300px;
-            padding-right: 50px;
-            padding-left: 50px;
-        }
-
-        .main__content {
-            color: #fff;
-            width: 100%;
-        }
-
-        .main__content h1 {
-            font-size: 4rem;
-            background-color: #ff8177;
-            background-image: linear-gradient(to top, #f80000 0%, #ffffff 100%);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-        }
-
-        .main__content h2 {
-            font-size: 4rem;
-            margin-top: 10px;
-            background-color: #ff8177;
-            background-image: linear-gradient(20deg, #f80000 0%, #ffffff 100%);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-        }
-
-        .main__content p {
-            margin-top: 1rem;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .main__img--container {
-            text-align: right;
-            
-        }
-
-        #main__img {
-            height: 90%;
-            width: 90%;
-            margin-left: 690px;
-            margin-top: 50px;
-        }
-
-        /* Share Your Thoughts Container CSS */
-.share-thoughts-container {
-position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(to top, #f80000 0%, #ffffff 100%);
-  padding: 50px;
-  border-radius: 15px; 
-}
-
-.share-thoughts-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 30px;
-  font-family: 'Roboto', sans-serif;
-}
-
-#thoughts-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  font-size: 1.2rem;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-}
-
-textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.btn-primary {
-  background-color: #ff8177;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #000; /* Change to black on hover */
-}
-
-        /* Footer CSS */
-        .footer__container {
-            background-color: #141414;
-            padding: 5rem 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #footer__logo {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 2rem;
-        }
-
-        .footer__image {
-            width: 200px;
-            height: 50%;
-        }
-
-        /* Social Icons */
-        .social__icon--link {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-        }
-
-        .social__icons--span {
-            font-size: 18px;
-            color: #ffffff;
-        }
-
-        .social__media {
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .social__media--wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            max-width: 1000px;
-            margin: 40px auto 0 auto;
-        }
-
-        .social__icons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 240px;
-        }
-
-        .social__icon--link {
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
-}
-
-.social__icons--span {
-  font-size: 18px;
-  color: #ffffff;
-}
-.social__media {
-  max-width: 1000px;
-  width: 100%;
-}
-
-.social__media--wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto 0 auto;
-}
-
-.social__icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 240px;
-  
-}
-
-.social__logo {
-  color: #fff;
-  justify-self: start;
-  margin-left: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.website__rights {
-  color: #fff;
-}
-
-@media screen and (max-width: 820px) {
-  .footer__links {
-    padding-top: 2rem;
-  }
-
-  #footer__logo {
-    margin-bottom: 2rem;
-  }
-
-  .website__rights {
-    margin-bottom: 2rem;
-  }
-
-  .footer__link--wrapper {
-    flex-direction: column;
-  }
-
-  .social__media--wrap {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .footer__link--items {
-    margin: 0;
-    padding: 10px;
-    width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-    
-
-
+ 
 
 
     <!-- Footer Section -->
     <div class="footer__container" id="bottom">
-        <section class="social__media">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="footer__logo">
-                            <a href="/" id="footer__logo"><img src="images/2.png" class="footer__image"
-                                    title="Title" alt="Logo"></a>
-                        </div>
-                        <p class="website__rights">© Mad Plate's Sizzling House 2023. All rights reserved</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="social__icons">
-                            <a class="social__icon--link"
-                                href="https://www.facebook.com/profile.php?id=100090826535166&mibextid=ZbWKwL"
-                                target="_blank" aria-label="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a class="social__icon--link" href="/" target="blank" aria-label="Contact">
-                                <i class="fa-solid fa-phone"></i>
-                            </a>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo"><img src="images/2.png" class="footer__image" title="Title"></a>
+          </div>
+          <p class="website__rights">© Mad Plate's Sizzling House 2023. All rights reserved</p>
+          <div class="social__icons">
+            <a
+              class="social__icon--link"
+              href="https://www.facebook.com/profile.php?id=100090826535166&mibextid=ZbWKwL"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a class="social__icon--link" href="/" target="blank" aria-label="Contact">
+            <i class="fa-solid fa-phone"></i>
+            </a>
+            <span class="social__icons--span">0927 926 4206</span>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <!-- Bootstrap JS and Popper.js -->
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -14,19 +14,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Custom Styles -->
+    
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #000; /* Set the background color to black */
+            background-color: #000; 
         }
 
         /* Footer CSS */
         .footer__container {
-            background: url('images/8.png') no-repeat center center fixed; /* Set the image as the background */
-            background-size: cover; /* Ensure the image covers the whole container */
-            height: 100vh; /* Set the height to cover the entire screen */
+            background: url('images/8.png') no-repeat center center fixed; 
+            background-size: cover; 
+            height: 100vh; 
             display: cover;
             align-items: center;
             justify-content: center;
@@ -34,12 +34,12 @@
         }
 
         .footer__logow img {
-            width: 100%; /* Adjust the width as needed */
-            height: auto; /* Maintain the aspect ratio */
-            max-width: 200px; /* Set a maximum width if needed */
-            display: block; /* Remove any extra spacing */
-            margin: 0 auto; /* Center the image within its container */
-            transform: scaleX(-1); /* Flip the image horizontally */
+            width: 100%; 
+            height: auto; 
+            max-width: 200px; 
+            display: block; 
+            margin: 0 auto; 
+            transform: scaleX(-1); 
         }
         .buttoncst:hover {
             background-color: red;
@@ -61,20 +61,20 @@
         }
 
         .main__img {
-    width: 35em; /* Adjust the width of the image */
-    height: 35em; /* Maintain the aspect ratio */
-    background: none; /* Remove the background */
-    margin-left: -30px; /* Move it to the left */
-    margin-top: 5em; 
-    position: absolute;
+            width: 35em; 
+            height: 35em; 
+            background: none; 
+            margin-left: -30px; 
+            margin-top: 5em; 
+            position: absolute;
         }
         .right{
-    float: right;
-    background-color: transparent;
-    height: 20em;
-    width: 40em;
-    margin-top: 13em;
-    margin-right: 10em;
+            float: right;
+            background-color: transparent;
+            height: 20em;
+            width: 40em;
+            margin-top: 13em;
+            margin-right: 10em;
         }
     </style>
 
@@ -84,17 +84,6 @@
 </head>
 
 <body>
-    <!-- Your existing HTML content goes here -->
-    
-    <!-- <div class="button-container">
-    <p style="margin: 0;  font-size: 20px; color: white ; font-family: Ancient Kai; text-align: right;">You are ?</p>
-    <div class="text-end">
-            <div class="rectangular-button stair-style" onclick="scrollPage('up')">Customer</div>
-            <p style="color: white ; font-size: 20px; font-family: Ancient Kai; text-align: right;">or</p>
-            <div class="rectangular-button stair-style" onclick="scrollPage('down')">Admin</div>
-        </div>
-    </div>
-</div> -->
 
 
      <!-- Image on the left -->
@@ -122,6 +111,7 @@
     </div>
 </div>
     </div>
+    
     <!-- Footer Section -->
     <div class="footer__container" id="bottom">
         <section class="social__media">
