@@ -1,4 +1,11 @@
 <?php
+
+session_start(); /* Starts the session */
+
+if(!isset($_SESSION['UserData']['Username'])){
+       exit;
+}
+
 $db = mysqli_connect('localhost', 'root', '', 'face_recog');
 
 if (!$db) {
