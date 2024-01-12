@@ -91,7 +91,29 @@
             top: 40%;
             left: 35%;
             transform: translate(-50%, -50%);
-            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+            background: linear-gradient(
+  180deg,
+  hsl(81deg 63% 94%) 0%,
+  hsl(81deg 42% 91%) 8%,
+  hsl(81deg 31% 88%) 16%,
+  hsl(81deg 24% 85%) 24%,
+  hsl(81deg 19% 82%) 32%,
+  hsl(81deg 16% 79%) 40%,
+  hsl(81deg 13% 75%) 46%,
+  hsl(81deg 11% 72%) 48%,
+  hsl(81deg 9% 68%) 51%,
+  hsl(81deg 8% 64%) 56%,
+  hsl(81deg 6% 60%) 61%,
+  hsl(81deg 5% 56%) 66%,
+  hsl(81deg 4% 51%) 71%,
+  hsl(81deg 4% 45%) 77%,
+  hsl(81deg 4% 39%) 83%,
+  hsl(81deg 4% 32%) 88%,
+  hsl(81deg 4% 23%) 94%,
+  hsl(0deg 0% 0%) 100%
+);
+
+
             padding: 50px;
             border-radius: 15px; 
         }
@@ -114,7 +136,7 @@
         }
 
         label {
-            font-size: 1.2rem;
+            font-size: 3rem;
             color: #333;
             font-family: 'Roboto', sans-serif;
         }
@@ -122,8 +144,8 @@
         textarea {
             width: 100%;
             padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
+            font-size: 3rem;
+            border: 3em solid black;
             border-radius: 5px;
         }
 
@@ -132,15 +154,17 @@
             color: #fff;
             font-size: 1.2rem;
             padding: 10px 20px;
-            border: none;
+            border: 3px solid black; /* Updated border property */
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-left: 11em; /* Adjust the right margin as needed */
         }
 
         .btn-primary:hover {
             background-color: white; /* Change to black on hover */
             color: black;
+            border: 1px solid black; 
         }
 
         /* Footer CSS */

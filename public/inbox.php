@@ -17,40 +17,79 @@ if (!$db) {
 <html>
 <head>
     <title>Feedback</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
 </head>
 <style>
     h1 {
+        margin-top: 60px;
         font-family: "Times New Roman", Times, serif;
         font-size: 80px;
         text-align: center;
         color: white;
     }
     table {
-        border-collapse: collapse;
-        margin:     left;
-        width: 500%;
-        border: 1px solid black;
-        text-align: center;
-    }
-
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px; /* Adjust the border radius for rounded corners */
+    padding: 20px; /* Adjust the padding on both sides as needed */
+    margin: 20px 0; /* Add margin as needed */
+    
+}
+   
     th, td {
         border: 1px solid black;
-        padding: 8px;
+        padding: 8px;  
+        background: pink;
+        border-radius: 30px; /* Adjust the border radius for rounded corners */
+        
     } 
-    body {
-        background-repeat: no-repeat;
-        background-size: 100%;
+    th {
+    height: 50px; /* Adjust the height as needed */
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 30px;
     }
+    td {
+    height: 50px; /* Adjust the height as needed */
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center; /* Center the text horizontally */
+    vertical-align: justify; /* Justify the text vertically */
+    font-size: 20px; /* Adjust the font size as needed */
+    
+}
+body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; 
+        }
+        .footer__container {
+            background: url('images/8.png') no-repeat center center fixed; 
+            background-size: cover; 
+            height: 100vh; 
+            display: cover;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer__logow img {
+            width: 100%; 
+            height: auto; 
+            max-width: 200px; 
+            display: block; 
+            margin: 0 auto; 
+            transform: scaleX(-1); 
+        }
 </style>
-<body background="https://i.gifer.com/7tD0.gif">
-    <i><h1>Feedback</h1></i>
+<body> 
+
+    <i><h1>Inquiries</h1></i>
 
     <table class="table table table-hover">
         
         <tr>
-            <th> G-mail</th>
-            <th> Feedback</th>
+            <th> Google mail</th>
+            <th> Messages </th>
         </tr>
 
         <?php 
@@ -64,5 +103,18 @@ if (!$db) {
     </table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="footer__container" id="bottom">
+        <section class="social__media">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer__logow">
+                            <a href="/" id="footer__logow"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

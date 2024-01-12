@@ -14,7 +14,7 @@
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-      <a href="customer.php" id="navbar__logo"><img src="images/2.png" class="navbar__image" title="Title">
+      <a href="welcome.php" id="navbar__logo"><img src="images/2.png" class="navbar__image" title="Title">
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>

@@ -40,7 +40,7 @@ if (isset($_POST['delete'])) {
     }
 
     mysqli_stmt_close($stmt);
-} elseif (isset($_POST['done'])) {
+    } elseif (isset($_POST['done'])) {
     $idToMarkAsDone = $_POST['reserve_id'];
     markReservationAsDone($idToMarkAsDone);
 
@@ -55,32 +55,101 @@ if (isset($_POST['delete'])) {
 <html>
 <head>
     <title>Reservation List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <style>
+    body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; 
+        }
     h1 {
+        margin-top: 60px;
         font-family: "Times New Roman", Times, serif;
-        font-size: 50px;
+        font-size: 80px;
         text-align: center;
         color: white;
-    }
+        }
     table {
-        border-collapse: collapse;
         width: 100%;
-        border: 1px solid black;
         text-align: center;
+        border-radius: 5px; 
+        padding: 20px; 
+        margin: 20px 0; 
+        
     }
-
+   
     th, td {
         border: 1px solid black;
-        padding: 8px;
+        padding: 8px;  
+        background: pink;
+        border-radius: 15px; 
+        
     } 
-    body {
-        background-repeat: no-repeat;
-        background-size: 100%;
+    th {
+    height: 50px; 
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 30px;
     }
+    td {
+    height: 50px; 
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center; 
+    vertical-align: justify; 
+    font-size: 20px; 
+    
+    }
+    body {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    }
+    button[name='done'] {
+    background-color: #28a745;
+    color: #fff; 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    button[name='done']:hover {
+    background-color: #fff; 
+    color: #28a745;
+    }
+
+
+    button[name='delete'] {
+    background-color: #dc3545; 
+    color: #fff; 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    button[name='delete']:hover {
+    background-color: #fff; 
+    color: #dc3545;
+    }
+    .footer__container {
+            background: url('images/8.png') no-repeat center center fixed; 
+            background-size: cover; 
+            height: 100vh; 
+            display: cover;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer__logow img {
+            width: 100%; 
+            height: auto; 
+            max-width: 200px; 
+            display: block; 
+            margin: 0 auto; 
+            transform: scaleX(-1); 
+        }
 </style>
-<body background="https://i.gifer.com/EFI0.gif">
+
     <i><h1> Summary of Reservation </h1></i>
 
     <table class="table table-light table-striped">
@@ -129,5 +198,18 @@ if (isset($_POST['delete'])) {
     </table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="footer__container" id="bottom">
+        <section class="social__media">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer__logow">
+                            <a href="/" id="footer__logow"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
