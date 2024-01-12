@@ -299,13 +299,14 @@
      <div class="share-thoughts-container">
     <div class="container">
     <h2 class="share-thoughts-title"><strong>Tell us what's on your mind</strong></h2>
-        <form action="process_message.php" method="post">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Insert Gmail:" id="email" name="email" required>
-            </div>
-            <div class="form-group">
+            <form action="process_message.php" method="post">
+        <div class="form-group">
+        <input type="email" placeholder="Insert Email Account:" name="email" required>
+        </div>
+        <div class="form-group">
               <textarea class="form-control" placeholder="Inquiries:" id="opinion" name="opinion" rows="3" required></textarea>
             </div>
+        </div>
             <button type="submit" class="btn-primary">Submit</button>
         </form>
     </div>
