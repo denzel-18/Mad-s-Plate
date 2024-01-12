@@ -14,41 +14,30 @@ function markReservationAsDone($id) {
     mysqli_stmt_close($stmt);
 }
 
-if (isset($_POST['delete'])) {
-    $idToDelete = $_POST['reserve_id'];
-
-    // Use a prepared statement to prevent SQL injection
-    $stmt = mysqli_prepare($db, "DELETE FROM booking1 WHERE id = ?");
-    mysqli_stmt_bind_param($stmt, "i", $idToDelete);
+// Function to handle the "Pending" action
+function markReservationAsPending($id) {
+    global $db;
+    $stmt = mysqli_prepare($db, "UPDATE booking1 SET status = 'Pending' WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
     mysqli_stmt_execute($stmt);
-
-    // Check if the deletion was successful
-    if (mysqli_stmt_affected_rows($stmt) > 0) {
-        echo "<script>
-                alert('Record Deleted Successfully');
-                window.location.href = 'assigned.php';
-              </script>";
-    } else {
-        echo "Error deleting record: " . mysqli_error($db);
-    }
-
     mysqli_stmt_close($stmt);
-} elseif (isset($_POST['done'])) {
-    $idToMarkAsDone = $_POST['reserve_id'];
-    markReservationAsDone($idToMarkAsDone);
+}
+
+// Check if the "Mark as Pending" button is clicked
+if (isset($_POST['pending'])) {
+    $idToMarkAsPending = $_POST['reserve_id'];
+    markReservationAsPending($idToMarkAsPending);
 
     echo "<script>
-            alert('Reservation marked as Done');
+            alert('Reservation marked as Pending');
             window.location.href = 'book_assigned.php';
           </script>";
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -74,7 +63,7 @@ if (isset($_POST['delete'])) {
         background-repeat: no-repeat;
         background-size: 100%;
     }
-    .sidenav {
+        .sidenav {
         height: 100%;
         width: 250px;
         position: fixed;
@@ -96,18 +85,6 @@ if (isset($_POST['delete'])) {
     .sidenav a:hover {
         color: #f1f1f1;
     }
-    .toggle-btn {
-        font-size: 24px;
-        cursor: pointer;
-        position: fixed;
-        left: 10px;
-        top: 10px;
-        background-color: #111;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-    }
-
     /* Hide the sidebar by default */
     .sidenav {
         display: none;
@@ -119,10 +96,21 @@ if (isset($_POST['delete'])) {
         margin-left: 0;
         /* ... existing styles ... */
     }
+    .toggle-btn {
+        font-size: 24px;
+        cursor: pointer;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        background-color: #111;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+    }
 </style>
 <body background="https://i.gifer.com/EFI0.gif">
     <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-    <div class="sidenav">
+        <div class="sidenav">
         <a href="book_assigned.php">Reservation</a>
         <a href="done.php">Reservation Done</a>
         <a href="pending.php">Reservation Pending</a>
@@ -130,53 +118,45 @@ if (isset($_POST['delete'])) {
     </div>
 
     <div class="content" style="margin-left: 0;">
-        <i><h1> Summary of Reservation </h1></i>
+    <i><h1> Summary of Reservation Pending </h1></i>
 
-        <table class="table table-light table-striped">
-            
-            <tr>
-                <th> Id Number </th>
-                <th> First Name </th>
-                <th> Last Name </th>
-                <th> Reservation Date </th>
-                <th> Time </th>
-                <th> Number of Person </th>
-                <th colspan='3'>Action</th>
-            </tr>
+    <table class="table table-light table-striped">
+        
+        <tr>
+            <th> Id Number </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Reservation Date </th>
+            <th> Time </th>
+            <th> Number of Person </th>
+            <th> Reservation Status </th>
+        </tr>
 
-            <?php 
-            $query = mysqli_query($db, "SELECT * FROM booking1 ORDER BY date, time");
-            $no = 1; // auto numbering
-            
-            while($value = mysqli_fetch_array($query)){
-                echo "<tr>"; 
-                echo "<td>". $no. "</td>";
-                echo "<td>". $value['name']. "</td>";
-                echo "<td>". $value['last']. "</td>";
-                echo "<td>". $value['date']. "</td>";
-                echo "<td>". date("h:i A", strtotime($value['time'])). "</td>"; // Format time to AM/PM
-                echo "<td>". $value['table']. "</td>";
+        <?php 
+        // Updated query to select only reservations with status not equal to 'Done'
+        $query = mysqli_query($db, "SELECT * FROM booking1 WHERE status != 'Done' ORDER BY date, time");
+        $no = 1; // auto numbering
+        
+        while($value = mysqli_fetch_array($query)){
+            echo "<tr>"; 
+            echo "<td>". $no. "</td>";
+            echo "<td>". $value['name']. "</td>";
+            echo "<td>". $value['last']. "</td>";
+            echo "<td>". $value['date']. "</td>";
+            echo "<td>". date("h:i A", strtotime($value['time'])). "</td>"; // Format time to AM/PM
+            echo "<td>". $value['table']. "</td>";
+            echo "<td>
+                    <form method='POST' onsubmit='return confirm(\"Mark this reservation as Pending?\");'>
+                        <input type='hidden' name='reserve_id' value='". $value['id']. "'>
+                        <button type='submit' name='pending' class='btn btn-warning'>Mark as Pending</button>
+                    </form>
+                  </td>";
 
-                echo "<td>
-                        <form method='POST' onsubmit='return confirm(\"Have you completed this reservation?\");'>
-                            <input type='hidden' name='reserve_id' value='". $value['id']. "'>
-                            <button type='submit' name='done' class='btn btn-success'>DONE</button>
-                        </form>
-                      </td>";
-                
-                echo "<td>
-                        <form method='POST' onsubmit='return confirm(\"Are you sure you want to delete this record?\");'>
-                            <input type='hidden' name='reserve_id' value='". $value['id']. "'>
-                            <button type='submit' name='delete' class='btn btn-danger'>DELETE</button>
-                        </form>
-                      </td>";
-
-                echo "</tr>";
-                $no++; // increment for the next iteration
-            }
-            ?>
-        </table>
-    </div>
+            echo "</tr>";
+            $no++; // increment for the next iteration
+        }
+        ?>
+    </table>
 
     <script>
     // JavaScript function to toggle the sidebar's visibility
