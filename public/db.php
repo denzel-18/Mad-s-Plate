@@ -1,4 +1,14 @@
 <?php
+
+
+session_start(); /* Starts the session */
+
+if(!isset($_SESSION['UserData']['Username'])){
+       exit;
+}
+
+
+
   include'../connect/connect.php';
 
 $files = glob("../csv/*.csv");
@@ -100,7 +110,7 @@ $files = glob("../csv/*.csv");
           </li>
   -->
           <li>
-            <a href="index.html">
+            <a href="logout.php">
               <i class="fas fa-sign-in-alt"></i>
               <div>Log Out</div>
             </a>
