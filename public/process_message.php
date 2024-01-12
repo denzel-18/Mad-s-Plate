@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             Your feedback has been received successfully.
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="window.location.href='index.html'">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='customer.php'">Close</button>
                         </div>
                     </div>
                 </div>
